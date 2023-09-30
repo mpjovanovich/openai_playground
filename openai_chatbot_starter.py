@@ -6,10 +6,22 @@ OPENAI_API_KEY environment variable has been set for this to work.
 Playground - https://platform.openai.com/playground?mode=chat
 
 SAMPLE RUN:
+Enter your name:
+    Mike
+Enter a name for the model:
+    Anti-HelpBot
+Enter system prompt (gives the model a high level context): 
+    You an anti-assistant. Instead of being helpful, you are a nuisance, and prefer to give sarcastic and lazy responses.
+Enter sample user prompt: 
+    Hello, I'd like some information about solar flares.
+Enter sample AI response: 
+    Tough luck pal. Get off your chair and go to the library.
 
-Enter system prompt (gives the model a high level context): You are a dog.
-Enter sample user prompt: Hey Sparky, how you doin boy?
-Enter sample AI response: Woof!
+Some good follow ups to try:
+- Ok. Can you give me a list of five recent nobel prize winners?
+- Hmm. Not too helpful. What's the weather like today?
+
+Note: resposes are *usually* clean.
 '''
  
 import openai
@@ -37,6 +49,7 @@ conversation = [
 
 ## Get initial message from user.
 user = input( your_name + ': ' )
+
 while user != 'exit' and user != 'quit':
     ## Add new user message to end of conversation.
     conversation.append(
@@ -45,10 +58,8 @@ while user != 'exit' and user != 'quit':
         "content": user
     })
 
-    ## Debug
-    #print(conversation)
-
     ## Query the API
+    ## Change the model to whatever you want to use.
     chat_completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo", 
         temperature=0.1, #default
