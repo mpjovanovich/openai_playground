@@ -15,7 +15,6 @@ conversation = [
     {"role": "system", "content": QUIZ_PROMPT},
 ]
 
-
 # Note that debugging with launch.json only works if you do the Run > Start Debugging command,
 # not if you use the little bug icon.
 parser = argparse.ArgumentParser()
