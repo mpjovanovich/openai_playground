@@ -7,24 +7,20 @@ import PyPDF2
 ## https://huggingface.co/docs/transformers/tasks/summarization
 
 SYSTEM_PROMPT = '''
-The user shall input a document, and the system shall provide a minimum of 10 multiple-choice 
-test questions, and 4 fill-in-the-blank questinos for a college exam based on the provided document.
-Multiple choice questions may include a fill-in-the-blank component.
+The user shall input a document, and the system shall provide quiestions for a college exam based on the provided document. 
+The system shall provide a minimum of 10 questions.
+Multiple choice questions may or may not include a fill-in-the-blank component.
 Questions shall be separated by a blank line.
-Questions shall not be numbered. 
-Responses shall not have letters in front.
-In the case of multiple choice, the correct response shall be listed first, followed by three incorrect responses. Only the top response shall be correct.
+Questions shall not be prefixed with a number or letter
+Responses shall not be prefixed with a number or letter.
+The correct response shall be listed first, followed by three incorrect responses. 
 
-Example multiple choice question and responses:
-A subscript / index is a(n) _________.
-number that indicates the position of an array element
-element in the array
-number that represents the highest value stored within an array
-alternate name for an array
-
-Example fill-in-the-blank question and responses:
-The subscript or position within an array is also called the _________.
-index
+Example:
+What is a variable?
+A placeholder for a value.
+A constant value.
+The length of a string.
+The name of a function.
 '''
 
 conversation = [
