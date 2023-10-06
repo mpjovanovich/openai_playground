@@ -7,26 +7,9 @@ import PyPDF2
 ## https://huggingface.co/docs/transformers/tasks/summarization
 
 SYSTEM_PROMPT = '''
-The user shall input a document, and the system shall provide a minimum of 10 multiple-choice 
-test questions, and 4 fill-in-the-blank questinos for a college exam based on the provided document.
-Multiple choice questions may include a fill-in-the-blank component.
-Questions shall be separated by a blank line.
-Questions shall not be numbered. 
-Responses shall not have letters in front.
-In the case of multiple choice, the correct response shall be listed first, followed by three incorrect responses. Only the top response shall be correct.
-
-Example multiple choice question and responses:
-A subscript / index is a(n) _________.
-number that indicates the position of an array element
-element in the array
-number that represents the highest value stored within an array
-alternate name for an array
-
-Example fill-in-the-blank question and responses:
-The subscript or position within an array is also called the _________.
-index
+The user shall input a document, and the system shall convert it to a semantically
+equavalent markdown document.
 '''
-
 conversation = [
 	## Provide the model with a high level context.
     {"role": "system", "content": SYSTEM_PROMPT},
@@ -53,7 +36,7 @@ else:
 
 conversation.append({"role": "user", "content": text})
 
-print('Generating quiz...')
+print('Generating markdown...')
 completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo", 
     temperature=0.1, #default
