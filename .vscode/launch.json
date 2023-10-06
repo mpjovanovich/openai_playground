@@ -12,8 +12,9 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "--input_file=/mnt/c/Users/mpjov/Desktop/SDEV_120_M01_Pt2.pdf",
-                "--output_file=/mnt/c/Users/mpjov/Desktop/quiz.txt",
+                "--input_file=/mnt/c/Users/mpjov/Desktop/120_notes/SDEV_120_M03_Pt2a.pdf",
+                "--output_file=/mnt/c/Users/mpjov/Desktop/120_notes/tmp.txt",
+                "--skip_pages=1"
             ]
         }
     ]

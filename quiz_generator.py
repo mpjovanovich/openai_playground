@@ -33,7 +33,10 @@ conversation = [
 parser = argparse.ArgumentParser()
 parser.add_argument('--input_file', type=str, required=True)
 parser.add_argument('--output_file', type=str, required=True)
+parser.add_argument('--skip_pages', type=str, required=False, default='0')
 args = parser.parse_args()
+
+skip_pages = list(map(int,args.skip_pages.split(',')))
 
 print('Reading input file...')
 text = ''
@@ -41,6 +44,8 @@ if args.input_file.endswith('.pdf'):
     with open(args.input_file, 'rb') as file:
         pdf_reader = PyPDF2.PdfReader(file)
         for i in range(len(pdf_reader.pages)):
+            if i in skip_pages:
+                continue
             page = pdf_reader.pages[i]
             text += page.extract_text()
 else:

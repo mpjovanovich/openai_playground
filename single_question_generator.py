@@ -4,12 +4,12 @@ import os
 
 
 SYSTEM_PROMPT = '''
-I'm a college processor writing an exam for an intro level computing logic course. 
-I will prompt with a question that I would like to appear on the exam. 
-The system shall output four multiple choice answers to this question, only one of which is correct. 
-The correct answer shall be marked with an asterisk (*). 
-Answers shall be approriate for a first year college course.
-The system shall also output a rationale for why the correct answer is correct. The rationale shall be a sentence or two long.
+The user shall prompt with a question, and the system shall provide a multiple choice answer to the question. 
+The answers shall be appropriate for a first year college course.
+The correct response shall be listed first, followed by three incorrect responses.
+Questions shall not be prefixed with a number or letter
+Responses shall not be prefixed with a number or letter.
+No double line breaks shall be used.
 '''
 conversation = [
 	## Provide the model with a high level context.
