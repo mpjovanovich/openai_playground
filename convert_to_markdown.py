@@ -6,9 +6,13 @@ import PyPDF2
 ## TODO: Might be worth looking into summarization pipelines
 ## https://huggingface.co/docs/transformers/tasks/summarization
 
+# The user shall input a document, and the system shall convert it to a semantically
+# equavalent markdown document.
+
 SYSTEM_PROMPT = '''
-The user shall input a document, and the system shall convert it to a semantically
-equavalent markdown document.
+The user shall input a document, and the system shall create bulleted list study guide.
+The study guide shall not include any questions.
+The study guide shall not copy any material verbatim from the input document.
 '''
 conversation = [
 	## Provide the model with a high level context.

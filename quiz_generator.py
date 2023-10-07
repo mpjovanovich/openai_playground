@@ -36,7 +36,7 @@ parser.add_argument('--output_file', type=str, required=True)
 parser.add_argument('--skip_pages', type=str, required=False, default='0')
 args = parser.parse_args()
 
-skip_pages = list(map(int,args.skip_pages.split(',')))
+skip_pages = list(map(lambda x: int(x) - 1,args.skip_pages.split(',')))
 
 print('Reading input file...')
 text = ''

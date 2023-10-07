@@ -12,7 +12,7 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "--input_file=/mnt/c/Users/mpjov/Desktop/120_notes/SDEV_120_M03_Pt2a.pdf",
+                "--input_file=/mnt/c/Users/mpjov/Desktop/120_notes/SDEV_120_M03_Pt2.pdf",
                 "--output_file=/mnt/c/Users/mpjov/Desktop/120_notes/tmp.txt",
                 "--skip_pages=1"
             ]
